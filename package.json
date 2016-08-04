@@ -1,6 +1,6 @@
 {
   "name": "qing-build",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "General build scripts for all qing module.",
   "homepage": "http://mycolorway.github.io/qing-build",
   "repository": {
