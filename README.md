@@ -12,7 +12,7 @@ npm install --save-dev qing-module
 
 ## Usage
 
-Set build configuration in `gulpfile.coffee` in your component:
+Initialize build configuration in your `gulpfile.coffee`:
 
 ```coffee
 gulp = require 'gulp'
