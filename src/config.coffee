@@ -1,3 +1,4 @@
+_ = require 'lodash'
 
 config =
   name: ''
@@ -5,9 +6,9 @@ config =
   version: ''
   homepage: ''
   umd: {}
+  gulp: null
 
-module.exports = ->
-  config
+module.exports = config
 
 module.exports.init = (c) ->
   _.extend config, c

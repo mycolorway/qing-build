@@ -1,4 +1,5 @@
 fs = require 'fs'
+path = require 'path'
 through = require 'through2'
 _ = require 'lodash'
 config = require '../config'
@@ -8,7 +9,8 @@ module.exports = (type = 'full') ->
   year = now.getFullYear()
   month = _.padStart(now.getMonth() + 1, 2, '0')
   date = now.getDate()
-  tpl = fs.readFileSync("src/templates/#{type}-header.txt").toString()
+  tplPath = path.resolve __dirname, "../templates/#{type}-header.txt"
+  tpl = fs.readFileSync(tplPath).toString()
   header = _.template(tpl)
     name: config.name
     version: config.version

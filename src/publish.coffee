@@ -1,4 +1,3 @@
-gulp = require 'gulp'
 gutil = require 'gulp-util'
 fs = require 'fs'
 request = require 'request'
@@ -8,6 +7,7 @@ compile = require './compile'
 test = require './test'
 _ = require 'lodash'
 config = require './config'
+gulp = config.gulp
 
 createRelease = (done) ->
   try
@@ -52,7 +52,5 @@ publish = gulp.series [
   createRelease
 ]..., (done) ->
   done()
-
-gulp.task 'publish', publish
 
 module.exports = publish

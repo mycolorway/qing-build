@@ -1,7 +1,8 @@
-gulp = require 'gulp'
 karma = require 'karma'
 fs = require 'fs'
 handleError = require './helpers/error'
+config = require './config'
+gulp = config.gulp
 
 test = (done) ->
   server = new karma.Server
@@ -13,7 +14,5 @@ test = (done) ->
     done()
 
   server.start()
-
-gulp.task 'test', test
 
 module.exports = test

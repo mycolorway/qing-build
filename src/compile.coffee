@@ -1,4 +1,3 @@
-gulp = require 'gulp'
 _ = require 'lodash'
 coffeelint = require './helpers/coffeelint'
 browserify = require './helpers/browserify'
@@ -7,7 +6,8 @@ header = require './helpers/header'
 rename = require './helpers/rename'
 uglify = require './helpers/uglify'
 umd = require './helpers/umd'
-config = require './config.json'
+config = require './config'
+gulp = config.gulp
 
 compileSass = ->
   gulp.src 'styles/**/*.scss'
@@ -37,8 +37,6 @@ compileUglify.displayName = 'compile-uglify'
 compileAssets = gulp.parallel compileCoffee, compileSass, (done) -> done()
 
 compile = gulp.series compileAssets, compileUglify, (done) -> done()
-
-gulp.task 'compile', compile
 
 module.exports = _.extend compile,
   sass: compileSass
