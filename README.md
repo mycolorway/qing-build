@@ -1,2 +1,3 @@
 # qing-build
-Build scripts for qing modules.
+
+General build scripts for all qing module.
