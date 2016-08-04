@@ -15,6 +15,11 @@ module.exports = (c) ->
     done()
   dev.displayName = 'dev'
 
+  gulp.task 'default', dev
+  gulp.task 'compile', compile
+  gulp.task 'test', test
+  gulp.task 'publish', publish
+
   dev: dev
   compile: compile
   test: test
